@@ -49,6 +49,22 @@ if (mm < 10){mm = "0"+mm}
 
 $("#date").html(mm + sp + dd + sp + yyyy)
 
+try{
+    var loadNotes = localStorage.getItem("H33-Devops-notes")
+}
+catch(err){
+    var loadNotes = "Enter Notes Here:"
+}
+
+$("#note-area").val(loadNotes);
+
+$("#saveNoteBtn").click(function(){
+    var currentNote = $("#note-area").val();
+    localStorage.setItem("H33-Devops-notes", currentNote);    
+})
+
+
+
 </script>
 </html>
 
